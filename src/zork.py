@@ -38,6 +38,8 @@ def Play_Zork():
 			elif second.lower() == ("read leaflet"):
 				print("---------------------------------------------------------")
 				print("Welcome to the Unofficial Python Version of Zork. Your mission is to find a Jade Statue.")
+			elif second.lower() == ("go east"):
+                                loop = 12
 			elif second.lower() == ("kick the bucket"):
 				print("---------------------------------------------------------")
 				print("You die.")
@@ -189,7 +191,7 @@ def Play_Zork():
 			if last_inp.lower() == ("open trunk"):
 				print("---------------------------------------------------------")
 				print("You have found the Jade Statue and have completed your quest!")
-			elif last.inp.lower() == ("kick the bucket"):
+			elif last_inp.lower() == ("kick the bucket"):
 				print("---------------------------------------------------------")
 				print("You die.")
 				print("---------------------------------------------------------")
@@ -200,10 +202,35 @@ def Play_Zork():
 					Play_Zork()
 			else:
 				print("---------------------------------------------------------")
+		#behind the house
+		while loop == 12:
+                        if loop == 12:
+                                print("---------------------------------------------------------")
+                                print("You end up behind the house. Only one window is open.")
+                                print("Ivy has claimed most of the house.")
+                                behind_house = input("What do you do? ")
+
+                        if behind_house.lower() == ("open window") or ("go west"):
+                                print("---------------------------------------------------------")
+                                print("You climb through the rickety window.")
+                                loop == 13
+                        elif behind_house.lower() == ("go south"):
+                                loop = 1
+                        elif behind_house.lower() == ("kick the bucket"):
+                                print("---------------------------------------------------------")
+                                print("You die.")
+                                print("---------------------------------------------------------")
+                                dead_inp = input("Do you want to continue? Y/N ")
+                                if dead_inp.lower() == ("n"):
+                                        exit()
+                                if dead_inp.lower() == ('y'):
+                                        Play_Zork()
+                        else:
+                                print("---------------------------------------------------------")
 			
-			# Exit loop at the end of game
-			exit_inp = input("Do you want to continue? Y/N ")
-			if exit_inp.lower() == ("n"):
-				exit()
-			if exit_inp.lower() == ("y"):
-				Play_Zork()
+		# Exit loop at the end of game
+		exit_inp = input("Do you want to continue? Y/N ")
+		if exit_inp.lower() == ("n"):
+			exit()
+		if exit_inp.lower() == ("y"):
+			Play_Zork()
